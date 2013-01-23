@@ -1,0 +1,33 @@
+showCompass   = 1; 
+showGPS       = 1; 
+showMap       = 1; 
+showWatch     = 1; 
+debriefing    = 1; 
+respawn       = 3; 
+respawnDelay  = 10; 
+respawnDialog = 1; 
+disabledAI    = 1;
+
+class Header
+{
+	gameType = Coop;            //DM, Team, Coop, ...
+	minPlayers = 1;             //min # of players the mission supports
+	maxPlayers = 40;            //Max # of players the mission supports
+};
+
+class Params {
+	class EmtpyLine1 {
+		title = ":: Game Settings";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;			
+	};
+	//ambientCivilians should remain first param
+	class ambientCivilians { 
+		title="    Ambient Civilians"; 
+		values[]={ 1,0 }; 
+		texts[]={ "Enabled","Disabled"}; 
+		default=0; 
+		code = ""; 
+	};
+};	
