@@ -1,12 +1,12 @@
-showCompass   = 1; 
+﻿showCompass   = 1; 
 showGPS       = 1; 
 showMap       = 1; 
 showWatch     = 1; 
 debriefing    = 1; 
-respawn       = 3; 
-respawnDelay  = 10; 
+respawn       = 2; 
+respawnDelay  = 1; 
 respawnDialog = 1; 
-disabledAI    = 1;
+disabledAI    = 0;
 
 class Header
 {
@@ -22,12 +22,45 @@ class Params {
 		texts[]={ "",""};
 		default = 0;			
 	};
-	//ambientCivilians should remain first param
-	class ambientCivilians { 
-		title="    Ambient Civilians"; 
-		values[]={ 1,0 }; 
-		texts[]={ "Enabled","Disabled"}; 
+	class woundsEnabled { 	
+		title="    Wounds ON"; 
+		values[]={false,true}; 
+		texts[]={ "OFF","ON"}; 
 		default=0; 
+		code = ""; 
+	}; 
+	class EmtpyLine3 {
+		title = ":: Time & Date Settings";
+		values[]={0,0};
+		texts[]={ "",""};
+		default = 0;			
+	};
+	class Month { 	
+		title="    Month"; 
+		values[]={ 1,2,3,4,5,6,7,8,9,10,11,12}; 
+		texts[]={ "January","Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}; 
+		default=3; 
+		code = ""; 
+	}; 
+	class Day { 
+		title="    Day"; 
+		values[]={ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31}; 
+		texts[]={ "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"}; 
+		default=5; 
+		code = ""; 
+	}; 
+	class Hour { 
+		title="    Hour"; 
+		values[]={ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}; 
+		texts[]={ "1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"}; 
+		default=10; 
+		code = ""; 
+	}; 
+	class Minute { 
+		title="    Minute"; 
+		values[]={ 00,15,30,45}; 
+		texts[]={ "00","15","30","45"}; 
+		default=00; 
 		code = ""; 
 	};
 };	
