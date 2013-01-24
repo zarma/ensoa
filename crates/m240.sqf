@@ -11,14 +11,14 @@
  clearweaponcargo _this;
  clearmagazinecargo _this;
 
- _this addweaponcargo ["ACE_BAF_L7A2_GPMG",4];
- _this addweaponcargo ["ACE_M240B",1];
- _this addweaponcargo ["M240",1];
- _this addweaponcargo ["m240_scoped_EP1",1];
- _this addweaponcargo ["ACE_M240L",1];
- _this addweaponcargo ["ACE_M240L_M145",1];
- _this addweaponcargo ["ACE_M60",1];
- _this addweaponcargo ["M60A4_EP1",1];
- _this addweaponcargo ["Mk_48_DES_EP1",1];
- _this addweaponcargo ["Mk_48",1];
+ _this addweaponcargo ["ACE_BAF_L7A2_GPMG",8];
+ _this addweaponcargo ["ACE_M240B",8];
+ _this addweaponcargo ["M240",8];
+ _this addweaponcargo ["m240_scoped_EP1",8];
+ _this addweaponcargo ["ACE_M240L",8];
+ _this addweaponcargo ["ACE_M240L_M145",8];
+ _this addweaponcargo ["ACE_M60",8];
+ _this addweaponcargo ["M60A4_EP1",8];
+ _this addweaponcargo ["Mk_48_DES_EP1",8];
+ _this addweaponcargo ["Mk_48",8];
  _this addmagazinecargo ["100Rnd_762x51_M240",16];

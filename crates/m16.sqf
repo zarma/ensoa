@@ -7,15 +7,9 @@
 * 
 */
 
+clearweaponcargo _this;
+clearmagazinecargo _this;
 
-while {true} do {
- if isnull _this exitwith {};
- if not alive _this exitwith {};
- clearweaponcargo _this;
- clearmagazinecargo _this;
+_this addweaponcargo ["M16A2",8];
+_this addmagazinecargo ["20Rnd_556x45_Stanag",20];
 
- _this addweaponcargo ["M16A2",4];
- _this addmagazinecargo ["20Rnd_556x45_Stanag",20];
-
- sleep 60*5;
-};

@@ -8,6 +8,9 @@ setTerrainGrid 25;
 // Init units 
 {removeAllWeapons _x;} forEach PlayableUnits;
 
+// Init crates 
+_null = [] execVM "crates\initcrates.sqf";
+
 // INIT RADIO DEBUT
 _trg = createTrigger ["EmptyDetector", position player]; 
 _trg setTriggerText "View Distance - 100"; 

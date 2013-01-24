@@ -11,13 +11,13 @@
  clearweaponcargo _this;
  clearmagazinecargo _this;
 
- _this addweaponcargo ["Binocular",2];
- _this addweaponcargo ["Laserdesignator",3];
- _this addweaponcargo ["ACE_MX2A",2];
- _this addweaponcargo ["NVGoggles",1];
- _this addweaponcargo ["ACE_Rangefinder_OD",1];
- _this addweaponcargo ["ACE_YardAge450",1];
- _this addweaponcargo ["Binocular_Vector",1];
- _this addweaponcargo ["ACE_Javelin_CLU",2];
- _this addmagazinecargo ["ACE_Battery_Rangefinder",1];
- _this addmagazinecargo ["Laserbatteries",1];
+ _this addweaponcargo ["Binocular",10];
+ _this addweaponcargo ["Laserdesignator",10];
+ _this addweaponcargo ["ACE_MX2A",10];
+ _this addweaponcargo ["NVGoggles",10];
+ _this addweaponcargo ["ACE_Rangefinder_OD",10];
+ _this addweaponcargo ["ACE_YardAge450",10];
+ _this addweaponcargo ["Binocular_Vector",10];
+ _this addweaponcargo ["ACE_Javelin_CLU",10];
+ _this addmagazinecargo ["ACE_Battery_Rangefinder",10];
+ _this addmagazinecargo ["Laserbatteries",10];
