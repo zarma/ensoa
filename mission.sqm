@@ -1,4 +1,4 @@
-﻿version=11;
+version=11;
 class Mission
 {
 	addOns[]=
@@ -32,7 +32,8 @@ class Mission
 		"CAWheeled3_M1030",
 		"CAWheeled_E_ATV",
 		"acex_veh_5ton",
-		"acex_usnavy_sys_repair"
+		"acex_usnavy_sys_repair",
+		"ca_modules_functions"
 	};
 	addOnsAuto[]=
 	{
@@ -41,6 +42,7 @@ class Mission
 		"acex_veh_gmv",
 		"CAAir_E_UH60M",
 		"acex_usnavy_men_usmc",
+		"ca_modules_functions",
 		"camisc3",
 		"acex_usnavy_c_weapon",
 		"cadata",
@@ -81,7 +83,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=68;
+		items=69;
 		class Item0
 		{
 			side="WEST";
@@ -1511,8 +1513,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6429.3955,105.70096,2193.0686};
-					azimut=190;
+					position[]={6406.7017,104.6038,2280.4177};
+					azimut=275;
 					special="NONE";
 					id=637;
 					side="WEST";
@@ -2545,10 +2547,28 @@ class Mission
 				};
 			};
 		};
+		class Item68
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3228.9512,117.74283,4275.3467};
+					id=998;
+					side="LOGIC";
+					vehicle="FunctionsManager";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=896;
+		items=904;
 		class Item0
 		{
 			position[]={2259.2583,111.50271,5028.0986};
@@ -11308,10 +11328,82 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 		};
+		class Item896
+		{
+			position[]={6352.9639,103.40172,2285.1934};
+			azimut=-89.550697;
+			id=990;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item897
+		{
+			position[]={6304.5142,103.023,2266.0776};
+			azimut=-89.550697;
+			id=991;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item898
+		{
+			position[]={6305.1143,103.023,2296.0757};
+			azimut=-89.550697;
+			id=992;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item899
+		{
+			position[]={6305.0503,103.023,2285.1611};
+			azimut=-89.550697;
+			id=993;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item900
+		{
+			position[]={6250.5581,103.15508,2301.094};
+			azimut=-89.550697;
+			id=994;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item901
+		{
+			position[]={6250.5586,103.32171,2312.0811};
+			azimut=-89.550697;
+			id=995;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item902
+		{
+			position[]={6250.3115,103.02851,2281.9893};
+			azimut=-89.550697;
+			id=996;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
+		class Item903
+		{
+			position[]={6248.3242,103.04556,2270.9834};
+			azimut=-89.550697;
+			id=997;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=12;
+		items=14;
 		class Item0
 		{
 			position[]={2288.676,102.35065,3436.7449};
@@ -11396,10 +11488,27 @@ class Mission
 			text="Anti Personnel";
 			type="hd_dot";
 		};
+		class Item12
+		{
+			position[]={6394.8203,104.31788,2280.7095};
+			name="z_mk_qualif1";
+			text="qualification";
+			type="mil_arrow";
+			angle=270;
+		};
+		class Item13
+		{
+			position[]={6300.4038,103.023,2292.6355};
+			name="Z_MrkTargets_RiflesClose";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=60;
+			b=60;
+		};
 	};
 	class Sensors
 	{
-		items=23;
+		items=24;
 		class Item0
 		{
 			position[]={6520.7593,121.42068,4827.5225};
@@ -11739,6 +11848,21 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expActiv="hint""KEEP TRACK OF YOUR SCORE! Time your shots Carefully,Dont rush and ZOOM IN EVERYTIME YOU HEAR THE DING SOME TARGETS CANT BE SEEN WITHOUT ZOOMING.""";
+			class Effects
+			{
+			};
+		};
+		class Item23
+		{
+			position[]={6390.9937,104.20959,2278.7678};
+			a=3;
+			b=4;
+			rectangular=1;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="hint ""Tenez vous prêt"";_null = execVM ""mission16a.sqf"";";
 			class Effects
 			{
 			};

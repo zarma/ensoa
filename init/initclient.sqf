@@ -6,7 +6,7 @@ setViewDistance(viewDist);
 setTerrainGrid 25;
 
 // Init units 
-{removeAllWeapons _x;} forEach PlayableUnits;
+//{removeAllWeapons _x;} forEach PlayableUnits; TODO a reactiver
 
 // Init crates 
 diag_log text format["|===   %1   ===|", "exec VM initcrates"];

@@ -1,0 +1,260 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, pistols">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,4346,-225.000000,200.000000,-125.000000,250.000000,0.000000,"init"};
+item1[] = {"no_weapon",4,218,-450.000000,425.000000,-350.000000,475.000000,7.000000,"no weapon"};
+item2[] = {"__No_weapon_",2,250,-600.000000,425.000000,-500.000000,475.000000,0.000000,"""No weapon"""};
+item3[] = {"",7,210,-654.000000,371.000000,-646.000000,379.000000,0.000000,""};
+item4[] = {"",7,210,-654.000000,520.999939,-646.000000,529.000061,0.000000,""};
+item5[] = {"",7,210,-654.000000,446.000000,-646.000000,454.000000,0.000000,""};
+item6[] = {"__SHOOTING_",2,250,-225.000000,425.000000,-125.000000,475.000000,0.000000,"<SHOOTING>"};
+item7[] = {"spawn_ended",4,218,-225.000000,500.000000,-125.000000,550.000000,0.000000,"spawn ended"};
+item8[] = {"empty_magazine",4,218,-450.000000,350.000000,-350.000000,400.000000,5.000000,"empty magazine"};
+item9[] = {"__Reload_weapon",2,250,-600.000000,350.000000,-500.000000,400.000000,0.000000,"""Reload weapon"""};
+item10[] = {"",7,210,-654.000000,596.000000,-646.000000,604.000000,0.000000,""};
+item11[] = {"too_far",4,218,-450.000000,500.000000,-350.000000,550.000000,10.000000,"too far"};
+item12[] = {"END",1,250,-225.000000,600.000000,-125.000000,650.000000,0.000000,"END"};
+item13[] = {"__Move_back_",2,250,-600.000000,500.000000,-500.000000,550.000000,0.000000,"""Move back"""};
+item14[] = {"spawn_ended",4,218,-450.000000,575.000000,-350.000000,625.000000,0.000000,"spawn ended"};
+item15[] = {"true",8,218,-225.000000,275.000000,-125.000000,325.000000,0.000000,"true"};
+link0[] = {0,15};
+link1[] = {1,2};
+link2[] = {2,5};
+link3[] = {3,5};
+link4[] = {4,10};
+link5[] = {5,4};
+link6[] = {6,1};
+link7[] = {6,7};
+link8[] = {6,8};
+link9[] = {6,11};
+link10[] = {7,12};
+link11[] = {8,9};
+link12[] = {9,3};
+link13[] = {10,14};
+link14[] = {11,13};
+link15[] = {13,4};
+link16[] = {14,6};
+link17[] = {15,6};
+globals[] = {25.000000,1,0,0,0,640,480,3,96,6316128,1,-654.831787,-35.953827,751.613220,82.959511,746,806,1};
+window[] = {0,-1,-1,-1,-1,1155,475,1714,204,1,764};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "pistols";
+  class States
+  {
+    /*%FSM<STATE "init">*/
+    class init
+    {
+      name = "init";
+      init = /*%FSM<STATEINIT""">*/"//starting conditions ------------------------------------------------" \n
+       "BIS_ShootingCompleted = false;" \n
+       "BIS_ShotsFired = 0;" \n
+       "BIS_TargetsKilled = 0;" \n
+       "BIS_KillLimit = 5;" \n
+       "BIS_TrainingWeapon = ""M9"";" \n
+       "" \n
+       "_targets = Z_Targets_RiflesClose;" \n
+       "" \n
+       "//setting targets ----------------------------------------------------" \n
+       "{" \n
+       "	_x addEventHandler [""killed"", ""_this call Z_handler_targetKilled""];" \n
+       "" \n
+       "} forEach (_targets);"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="__SHOOTING_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__No_weapon_">*/
+    class __No_weapon_
+    {
+      name = "__No_weapon_";
+      init = /*%FSM<STATEINIT""">*/"call BIS_AdvHints_setDefaults;" \n
+       "" \n
+       "BIS_AdvHints_THeader = localize ""STR_EP1_pistols.fsmFSM_States___No_weapon_0"";" \n
+       "BIS_AdvHints_TInfo = """";" \n
+       "BIS_AdvHints_TAction = localize ""STR_EP1_pistols.fsmFSM_States___No_weapon_2"";" \n
+       "BIS_AdvHints_TBinds = """";" \n
+       "BIS_AdvHints_Text = call BIS_AdvHints_formatText;" \n
+       "BIS_AdvHints_HideCond = ""currentWeapon player == 'M9'"";" \n
+       "" \n
+       "BIS_AdvHints_Spawn = [] spawn BIS_AdvHints_showHintSpawn;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "spawn_ended">*/
+        class spawn_ended
+        {
+          priority = 0.000000;
+          to="__SHOOTING_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"scriptDone BIS_AdvHints_Spawn"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__SHOOTING_">*/
+    class __SHOOTING_
+    {
+      name = "__SHOOTING_";
+      init = /*%FSM<STATEINIT""">*/"//un-lock targets" \n
+       "{_x allowDamage true;} forEach (_targets);" \n
+       "" \n
+       "BIS_AdvHints_THeader = localize ""STR_EP1_pistols.fsmFSM_States___SHOOTING_0"";" \n
+       "BIS_AdvHints_TInfo = """";" \n
+       "BIS_AdvHints_TAction = localize ""STR_EP1_pistols.fsmFSM_States___SHOOTING_2"";" \n
+       "BIS_AdvHints_TBinds = """";" \n
+       "BIS_AdvHints_Text = call BIS_AdvHints_formatText;" \n
+       "//BIS_AdvHints_Footer = {[BIS_TargetsKilled,5] call BIS_AdvHints_createCountdownLine};" \n
+       "BIS_AdvHints_HideCond = ""BIS_ShootingCompleted"";" \n
+       "//BIS_AdvHints_Seamless = true;" \n
+       "//BIS_AdvHints_Silent = true;" \n
+       "BIS_AdvHints_Spawn = [] spawn BIS_AdvHints_showHintSpawn;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "too_far">*/
+        class too_far
+        {
+          priority = 10.000000;
+          to="__Move_back_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!([player,BIS_WP_Pistols_Shelter,2] call BIS_isInDistance2D)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "no_weapon">*/
+        class no_weapon
+        {
+          priority = 7.000000;
+          to="__No_weapon_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"currentWeapon player == """""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "empty_magazine">*/
+        class empty_magazine
+        {
+          priority = 5.000000;
+          to="__Reload_weapon";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"player ammo BIS_TrainingWeapon == 0"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "spawn_ended">*/
+        class spawn_ended
+        {
+          priority = 0.000000;
+          to="END";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"scriptDone BIS_AdvHints_Spawn"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__Reload_weapon">*/
+    class __Reload_weapon
+    {
+      name = "__Reload_weapon";
+      init = /*%FSM<STATEINIT""">*/"call BIS_AdvHints_setDefaults;" \n
+       "" \n
+       "BIS_AdvHints_THeader = localize ""STR_EP1_pistols.fsmFSM_States___Reload_weapon0"";" \n
+       "BIS_AdvHints_TInfo = """";" \n
+       "BIS_AdvHints_TAction = localize ""STR_EP1_pistols.fsmFSM_States___Reload_weapon2"";" \n
+       "BIS_AdvHints_TBinds = [localize ""STR_EP1_pistols.fsmFSM_States___Reload_weapon3"", {'ReloadMagazine' call BIS_getKeyBind}];" \n
+       "BIS_AdvHints_Text = call BIS_AdvHints_formatText;" \n
+       "BIS_AdvHints_HideCond = ""player ammo BIS_TrainingWeapon > 0"";" \n
+       "" \n
+       "BIS_AdvHints_Spawn = [] spawn BIS_AdvHints_showHintSpawn;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "spawn_ended">*/
+        class spawn_ended
+        {
+          priority = 0.000000;
+          to="__SHOOTING_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"scriptDone BIS_AdvHints_Spawn"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "END">*/
+    class END
+    {
+      name = "END";
+      init = /*%FSM<STATEINIT""">*/"//reseting targets ---------------------------------------------------" \n
+       "{" \n
+       "	_x removeAllEventHandlers ""killed"";" \n
+       "" \n
+       "} forEach (_targets);" \n
+       "" \n
+       "call BIS_AdvHints_setDefaults;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__Move_back_">*/
+    class __Move_back_
+    {
+      name = "__Move_back_";
+      init = /*%FSM<STATEINIT""">*/"//lock targets" \n
+       "{_x allowDamage false;} forEach (_targets);" \n
+       "" \n
+       "call BIS_AdvHints_setDefaults;" \n
+       "" \n
+       "BIS_AdvHints_THeader = localize ""STR_EP1_pistols.fsmFSM_States___Move_back_0"";" \n
+       "BIS_AdvHints_TInfo = localize ""STR_EP1_pistols.fsmFSM_States___Move_back_1"";" \n
+       "BIS_AdvHints_TAction = localize ""STR_EP1_pistols.fsmFSM_States___Move_back_2"";" \n
+       "BIS_AdvHints_TBinds = """";" \n
+       "BIS_AdvHints_Text = call BIS_AdvHints_formatText;" \n
+       "BIS_AdvHints_HideCond = ""[BIS_WP_Pistols_Shelter,2] call BIS_checkptReached"";" \n
+       "" \n
+       "BIS_AdvHints_Spawn = [] spawn BIS_AdvHints_showHintSpawn;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "spawn_ended">*/
+        class spawn_ended
+        {
+          priority = 0.000000;
+          to="__SHOOTING_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"scriptDone BIS_AdvHints_Spawn"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="init";
+  finalStates[] =
+  {
+    "END",
+  };
+};
+/*%FSM</COMPILE>*/
