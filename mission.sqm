@@ -1,4 +1,4 @@
-version=11;
+﻿version=11;
 class Mission
 {
 	addOns[]=
@@ -81,7 +81,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=65;
+		items=68;
 		class Item0
 		{
 			side="WEST";
@@ -1511,8 +1511,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={1296.9314,118.488,1437.0892};
-					azimut=44.005901;
+					position[]={6429.3955,105.70096,2193.0686};
+					azimut=190;
 					special="NONE";
 					id=637;
 					side="WEST";
@@ -2486,10 +2486,69 @@ class Mission
 				};
 			};
 		};
+		class Item65
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6432.0771,105.4882,2181.2754};
+					azimut=-174.01567;
+					id=981;
+					side="WEST";
+					vehicle="US_Soldier_EP1";
+					leader=1;
+					skill=0.60000002;
+					init="Removeallweapons this;";
+				};
+			};
+		};
+		class Item66
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6431.5322,105.37139,2176.0962};
+					azimut=3.1933801;
+					id=988;
+					side="WEST";
+					vehicle="US_Soldier_Officer_EP1";
+					leader=1;
+					skill=0.60000002;
+					init="Removeallweapons this;this addweapon ""Binocular"";";
+					description="Instructor - Weapon Table";
+				};
+			};
+		};
+		class Item67
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6398.3271,104.76807,2165.2119};
+					azimut=-216.241;
+					id=989;
+					side="WEST";
+					vehicle="US_Soldier_Officer_EP1";
+					leader=1;
+					skill=0.60000002;
+					init="Removeallweapons this;this addweapon ""Binocular"";";
+					description="Instructor - Firing Range";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=879;
+		items=896;
 		class Item0
 		{
 			position[]={2259.2583,111.50271,5028.0986};
@@ -11073,10 +11132,186 @@ class Mission
 			skill=0.60000002;
 			text="crate9_1";
 		};
+		class Item879
+		{
+			position[]={2361.0735,100.77633,3488.7893};
+			azimut=-293.99313;
+			id=970;
+			side="EMPTY";
+			vehicle="MBG_Killhouse_3_InEditor";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item880
+		{
+			position[]={6302.3569,103.94334,2166.6411};
+			azimut=-89.550697;
+			id=971;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1";
+		};
+		class Item881
+		{
+			position[]={6301.4829,103.937,2146.8843};
+			azimut=-89.550697;
+			id=972;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_1";
+		};
+		class Item882
+		{
+			position[]={6349.6733,103.937,2147.1682};
+			azimut=-89.550697;
+			id=973;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_2";
+		};
+		class Item883
+		{
+			position[]={6246.9224,104.34177,2162.9631};
+			azimut=-89.550697;
+			id=974;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_3";
+		};
+		class Item884
+		{
+			position[]={6199.6489,103.3397,2147.1265};
+			azimut=-89.550697;
+			id=975;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_4";
+		};
+		class Item885
+		{
+			position[]={6145.1421,104.29853,2159.9075};
+			azimut=-89.550697;
+			id=976;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_5";
+		};
+		class Item886
+		{
+			position[]={6110.2837,104.74698,2157.6106};
+			azimut=-89.550697;
+			id=977;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_6";
+		};
+		class Item887
+		{
+			position[]={6199.0195,103.41792,2157.3994};
+			azimut=-89.550697;
+			id=978;
+			side="EMPTY";
+			vehicle="TargetEpopup";
+			skill=0.60000002;
+			text="pt1_7";
+		};
+		class Item888
+		{
+			position[]={6431.564,105.40522,2177.353};
+			azimut=364.17776;
+			special="NONE";
+			id=979;
+			side="EMPTY";
+			vehicle="FoldTable";
+			leader=1;
+			lock="LOCKED";
+			skill=1;
+		};
+		class Item889
+		{
+			position[]={6431.7935,105.41202,2177.4714};
+			azimut=184.17799;
+			special="NONE";
+			id=980;
+			side="EMPTY";
+			vehicle="HeliHEmpty";
+			leader=1;
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="hp2_1";
+			init="this setPos [getPos this select 0, getPos this select 1, 0.8]; rifle2 = ""weaponholder"" createVehicle getpos this; rifle2 addMagazineCargo [""20Rnd_556x45_Stanag"",2]; rifle2 addWeaponCargo [""M16A2"",1]; rifle2 setpos [getPos this select 0,getPos this select 1, 0.8]; rifle2 setDir 205;";
+		};
+		class Item890
+		{
+			position[]={6097.1353,103.16922,2119.3955};
+			azimut=94.438972;
+			id=982;
+			side="EMPTY";
+			vehicle="Land_Dirthump03";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item891
+		{
+			position[]={6097.5303,103.36141,2129.2825};
+			azimut=94.438972;
+			id=983;
+			side="EMPTY";
+			vehicle="Land_Dirthump03";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item892
+		{
+			position[]={6097.7139,103.82419,2140.0571};
+			azimut=94.438972;
+			id=984;
+			side="EMPTY";
+			vehicle="Land_Dirthump03";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item893
+		{
+			position[]={6097.8389,104.2469,2149.363};
+			azimut=94.438972;
+			id=985;
+			side="EMPTY";
+			vehicle="Land_Dirthump03";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item894
+		{
+			position[]={6097.2378,104.39124,2158.9434};
+			azimut=94.438972;
+			id=986;
+			side="EMPTY";
+			vehicle="Land_Dirthump03";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item895
+		{
+			position[]={6097.834,104.53167,2167.7422};
+			azimut=94.438972;
+			id=987;
+			side="EMPTY";
+			vehicle="Land_Dirthump03";
+			leader=1;
+			skill=0.60000002;
+		};
 	};
 	class Markers
 	{
-		items=11;
+		items=12;
 		class Item0
 		{
 			position[]={2288.676,102.35065,3436.7449};
@@ -11154,10 +11389,17 @@ class Mission
 			type="Empty";
 			angle=39.543404;
 		};
+		class Item11
+		{
+			position[]={3769.2974,121.37012,5020.5479};
+			name="Antip_1";
+			text="Anti Personnel";
+			type="hd_dot";
+		};
 	};
 	class Sensors
 	{
-		items=17;
+		items=23;
 		class Item0
 		{
 			position[]={6520.7593,121.42068,4827.5225};
@@ -11410,6 +11652,95 @@ class Mission
 			class Effects
 			{
 				sound="ak74FarNear";
+			};
+		};
+		class Item17
+		{
+			position[]={6396.0684,104.52605,2158.6155};
+			a=5;
+			b=5;
+			rectangular=1;
+			activationBy="WEST";
+			timeoutMin=30;
+			timeoutMid=30;
+			timeoutMax=30;
+			age="UNKNOWN";
+			expActiv="nul=[40,1,12] execVM ""lessons\popup.sqf""; ";
+			class Effects
+			{
+			};
+		};
+		class Item18
+		{
+			position[]={6396.2983,104.53662,2158.8281};
+			a=5;
+			b=5;
+			rectangular=1;
+			activationBy="WEST";
+			timeoutMin=10;
+			timeoutMid=10;
+			timeoutMax=10;
+			age="UNKNOWN";
+			expActiv="hint""BASIC RIFLE MARKSMANSHIP (BRM)   You are about to Qualify Using the M16A2. There will be a total of 40 Targets you'll need to hit 23 to Qualify Marksman 30 to for Sharpshooter and 36 for Expert Marksman.""";
+			class Effects
+			{
+			};
+		};
+		class Item19
+		{
+			position[]={6431.8447,105.4313,2178.251};
+			a=10;
+			b=10;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="hint""Welcome to BRM Take Your M16A2 and both 20Rnd mags from the table and walk over to the firing lane where the Officer is standing.""";
+			class Effects
+			{
+			};
+		};
+		class Item20
+		{
+			position[]={6421.5698,105.10509,2170.6394};
+			a=20;
+			b=2;
+			angle=90.153;
+			rectangular=1;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="hint""You will fire 20Rnds Prone,Reload and then fire your last 20Rnd Magazine from the Kneeling Position""";
+			class Effects
+			{
+			};
+		};
+		class Item21
+		{
+			position[]={6396.7207,104.53783,2158.6289};
+			a=5;
+			b=5;
+			rectangular=1;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="hint""G0 PRONE and fire 20 Rnds Then Use your last ,20rnd magazine in the Kneeling Position. DO NOT FIRE UNTIL YOU SEE READY!""";
+			class Effects
+			{
+			};
+		};
+		class Item22
+		{
+			position[]={6411.7861,105.02817,2170.0413};
+			a=20;
+			b=2;
+			angle=90.153;
+			rectangular=1;
+			activationBy="WEST";
+			interruptable=1;
+			age="UNKNOWN";
+			expActiv="hint""KEEP TRACK OF YOUR SCORE! Time your shots Carefully,Dont rush and ZOOM IN EVERYTIME YOU HEAR THE DING SOME TARGETS CANT BE SEEN WITHOUT ZOOMING.""";
+			class Effects
+			{
 			};
 		};
 	};

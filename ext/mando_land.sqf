@@ -1,4 +1,4 @@
-// mando automatic land script for ArmA 1.05 or above
+﻿// mando automatic land script for ArmA 1.05 or above
 // mando_land.sqf v1.3
 // Jun 2007 Mandoble
 // 

@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////
+﻿//////////////////////////////////////////////////////////////////
 // Function file for Armed Assault 2
 // Template for ACE
 // Created by: =[A*C]= Z
@@ -12,8 +12,12 @@ DEBUG = true;
 //"respawn_west" setMarkerPosLocal [markerPos "respawn_west" select 0, markerPos "respawn_west" select 1, 0];
 if(DEBUG) then {onMapSingleClick "player setpos _pos";};
 
-// initialisation des fonctions
+// compilation des fonctions
 ZF_stringToConfig  = compile preprocessFile "ca\modules\ambient_combat\data\scripts\functions\convertGroupStringToConfig.sqf";
+// compilation des caisse
+//ZF_popup  = compile preprocessFile"crates\popup";
+// compilation des lessons
+// ZF_popup  = compile preprocessFile"lessons\popup.sqf";
 nul=[] execVM "z_fnc\z_fn_chat.sqf";
 
 // distance de vue
@@ -41,6 +45,7 @@ for "_i" from 0 to (count paramsArray - 1) do {
 
 //======= CLIENT SIDE
 if (local player) then {
+	diag_log text format["|===   %1   ===|", "initclient"]; 
 	call compile preprocessFileLineNumbers "init\initclient.sqf";	
 }; 
 
@@ -48,7 +53,7 @@ if (local player) then {
 //if (isServer) then { call compile preprocessFileLineNumbers "init\initserver.sqf"; };
 if (isServer) then {
 // ACE Modules
-
+	diag_log text format["|===   %1   ===|", "initserver"];
 	ace_sys_wounds_enabled = woundsEnabled;					publicVariable "ace_sys_wounds_enabled";											
 	ace_sys_wounds_noai = false;							publicVariable "ace_sys_wounds_noai";
 	ace_sys_wounds_all_medics = true;						publicVariable "ace_sys_wounds_all_medics";

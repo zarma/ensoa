@@ -9,7 +9,8 @@ setTerrainGrid 25;
 {removeAllWeapons _x;} forEach PlayableUnits;
 
 // Init crates 
-_null = [] execVM "crates\initcrates.sqf";
+diag_log text format["|===   %1   ===|", "exec VM initcrates"];
+_null = [] execVM "init\initcrates.sqf";
 
 // INIT RADIO DEBUT
 _trg = createTrigger ["EmptyDetector", position player]; 

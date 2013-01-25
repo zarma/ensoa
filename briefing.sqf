@@ -1,4 +1,4 @@
-// JIP
+﻿// JIP
 waitUntil {!(isNull player)};
 waitUntil {player==player};   
 
