@@ -46,7 +46,8 @@ for "_i" from 0 to (count paramsArray - 1) do {
 //======= CLIENT SIDE
 if (local player) then {
 	diag_log text format["|===   %1   ===|", "initclient"]; 
-	call compile preprocessFileLineNumbers "init\initclient.sqf";	
+	call compile preprocessFileLineNumbers "init\initclient.sqf";
+	_stop = table_mout addAction["Lever les cibles","z_fnc\z_fn_popup.sqf",["Z_MrkTargets_Mout", 80]];	
 }; 
 
 //======= SERVER SIDE
@@ -54,17 +55,5 @@ if (local player) then {
 if (isServer) then {
 // ACE Modules
 	diag_log text format["|===   %1   ===|", "initserver"];
-	ace_sys_wounds_enabled = woundsEnabled;					publicVariable "ace_sys_wounds_enabled";											
-	ace_sys_wounds_noai = false;							publicVariable "ace_sys_wounds_noai";
-	ace_sys_wounds_all_medics = true;						publicVariable "ace_sys_wounds_all_medics";
-	ace_sys_wounds_ai_movement_bloodloss = true;			publicVariable "ace_sys_wounds_ai_movement_bloodloss";
-	ace_sys_wounds_player_movement_bloodloss = true;		publicVariable "ace_sys_wounds_player_movement_bloodloss";
-	ace_sys_wounds_auto_assist = true;						publicVariable "ace_sys_wounds_auto_assist";
-	ace_sys_aitalk_enabled = true;							publicVariable "ace_sys_aitalk_enabled";
-	ace_sys_aitalk_radio_enabled = true;					publicVariable "ace_sys_aitalk_radio_enabled";
-	ace_sys_aitalk_talkforplayer = false;					publicVariable "ace_sys_aitalk_talkforplayer";
-	
-// 
 	setDate [2010, Month, Day, Hour, Minute + (time/60)];	
-
 }; // fin init server

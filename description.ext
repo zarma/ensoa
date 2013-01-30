@@ -6,7 +6,7 @@ debriefing    = 1;
 respawn       = 2; 
 respawnDelay  = 1; 
 respawnDialog = 1; 
-disabledAI    = 0;
+disabledAI    = 1;
 
 class Header
 {

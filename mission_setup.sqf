@@ -9,3 +9,4 @@
 nopop = true;  // disable auto pop-up
 //rifles-close
 Z_Targets_RiflesClose = nearestObjects [markerPos 'Z_MrkTargets_RiflesClose', ["TargetEpopup"], 60];
+
