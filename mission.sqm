@@ -1468,8 +1468,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2313.9512,102.00164,3425.4053};
-					azimut=374.53894;
+					position[]={6400.9077,104.51445,2278.5413};
+					azimut=267.72037;
 					special="NONE";
 					id=527;
 					side="WEST";
@@ -12020,7 +12020,7 @@ class Mission
 			repeating=1;
 			interruptable=1;
 			age="UNKNOWN";
-			expActiv="hint ""Tenez vous prêt"";_null = execVM ""mission16a.sqf"";";
+			expActiv="hint format[""Tenez vous prêt %1"", name (thislist select 0)] ;_null = [thislist select 0,10,5] execVM ""mission16a.sqf"";";
 			class Effects
 			{
 			};

@@ -2,7 +2,7 @@
 // Function file for Armed Assault 2
 // Template for ACE
 // Created by: =[A*C]= Z
-// _null = execVM "mission16a.sqf"
+// _null = [player] execVM "mission16a.sqf"
 //////////////////////////////////////////////////////////////////
 //diag_log text ""; 
 
@@ -14,9 +14,12 @@
 //--------------------------------------------------------------------------------------------------
 // INIT MISSION
 //--------------------------------------------------------------------------------------------------
-_player = player;
+diag_log text format["|=_this==   %1   ===|", _this];
+_player = _this select 0;
+_killLimit = _this select 1;
+_time2Hit = _this select 2;
 _player setVariable ["killed", 0, false];
-_player setVariable ["killLimit", 5, false];
+_player setVariable ["killLimit", _killLimit, false];
 
 if (isServer) then {
 	_targets = Z_Targets_RiflesClose;
@@ -33,45 +36,51 @@ if (isServer) then {
 	//--------------------------------------------------------------------------------------------------
 	// SHOOTING RANGE1
 	//--------------------------------------------------------------------------------------------------
-	player setVariable ["shootingComplete", false, false];
-	[Z_Targets_RiflesClose,2,2] spawn {
-		private["_target","_targets","_targetsAll","_time2Wait","_time2Hit","_phase","_t","_tdelta"];
+	_player setVariable ["shootingComplete", false, false];
+	[Z_Targets_RiflesClose,2,_time2Hit,_player] spawn {
+		private["_target","_targets","_targetsAll","_time2Wait","_time2Hit","_phase","_t","_tdelta","_targetno"];
 		
 		//_targets = BIS_Targets_RiflesFar;
 		_targetsAll = _this select 0;
 		_targets = _this select 0;
 		_time2Wait = _this select 1;
 		_time2Hit = _this select 2;
+		_player = _this select 3;
+		_targetno = 0;
 		
 		diag_log text format["|=_this==   %1   ===|", _this];
 		{
-			//_x addEventHandler ["killed", "_this call Z_handler_targetKilled"];
+			_x removeAllMPEventHandlers "MPhit";
 			_x addMPEventHandler ["MPhit", "_this call Z_handler_targetKilled"];
 		
 		} forEach (_targets);
 		
+		//diag_log text format["|=(_player getVariable 'shootingComplete')==   %1   ===|", (_player getVariable "shootingComplete")];
 		while {!(_player getVariable "shootingComplete")} do {
 		
 			if((count _targets) == 0) then {
-				hint "no more target";
-				_player setVariable ["shootingComplete", true, false]; 		
+				//diag_log text format["|=_this==   %1   ===|", "no more target"];				
+				_targets = _targetsAll;
 			} else {
+				//diag_log text format["|=_this==   %1   ===|", "choise target"];
 				_tdelta = random(_time2Wait);
 				_t = time;
 				
 				waitUntil{(time > _t + _tdelta)};
 				
 				_target = _targets call BIS_fnc_selectRandom;
-				diag_log text format["|==_targets =   %1   ===|", _targets]; 
-				diag_log text format["|==_target =   %1   ===|", _target]; 
+				//diag_log text format["|==_targets =   %1   ===|", _targets]; 
+				//diag_log text format["|==_target =   %1   ===|", _target]; 
 				_targets = _targets - [_target];
-				diag_log text format["|==_targets apr delete =   %1   ===|", _targets]; 
+				//diag_log text format["|==_targets apr delete =   %1   ===|", _targets]; 
 				_target animate ["terc",0];
 				
 				waitUntil{(_target animationPhase "terc" == 0)};
 
 				_target allowDamage true;		
 				_tdelta = random(_time2Hit)+2;
+				_targetno = _targetno + 1;
+				_player setVariable ["targetno", _targetno, false];
 				_t = time;
 			
 				//waitUntil{_phase = _target animationPhase "terc"; (time > _t + _tdelta) || (_phase > 0)};
@@ -89,7 +98,7 @@ if (isServer) then {
 		// PUP-UP THE TARGETS
 		//--------------------------------------------------------------------------------------------------
 		{
-			_x removeAllEventHandlers "hit";
+			_x removeAllMPEventHandlers "MPhit";
 			_x animate ["terc",0];
 			_x allowDamage false;
 		} forEach _targetsAll;
@@ -98,6 +107,7 @@ if (isServer) then {
 		{
 			_x animate ["terc",1];
 		} forEach _targetsAll;
+		
+		[format["|=  %1  =|", "terminé"]] spawn z_hint;
 	};
 };
-hint "Session Complete";

@@ -4,22 +4,23 @@
 // Created by: =[A*C]= Z
 //////////////////////////////////////////////////////////////////
 //diag_log text ""; 
-
+z_hint = {hint format["%1", _this select 0];};
 //passed array: [unit, killer]
 Z_handler_targetKilled = {
-	private["_target","_killer","_killed","_killLimit"];		
+	private["_target","_killer","_killed","_killLimit","_targetno"];		
 	_target = _this select 0;
 	_killer = _this select 1;
 	_target allowDamage false;
 	_killed = _killer getVariable "killed";
 	_killed = _killed + 1;
+	_targetno = _killer getVariable "targetno";
 	//limit current kills to max. kills and set training as completed
 	_killLimit = player getVariable "killLimit";
-	hint format["|===Killed =   %1   ===|", _killed];
+	[format["|===   %1 cibles touchées sur %2   ===|", _killed,_targetno]] spawn z_hint;
 	if (_killLimit > 0 && _killed >= _killLimit) then {
 		_killed = _killLimit;			
 		_killer setVariable ["shootingComplete", true, false]; 
-		hint format["|===Bravo killed =   %1   ===|", _killed];
+		[format["|== scéance terminée %1 cibles touchées sur %2  ===|", _killed,_targetno]] spawn z_hint;
 	};
 	_killer setVariable ["killed", _killed, false]; 	
 };
