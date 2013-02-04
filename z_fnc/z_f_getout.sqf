@@ -4,7 +4,7 @@
 // get out of a vehicle
 // return the crew not tested
 //////////////////////////////////////////////////////////////////
-
+if (!isServer) exitWith{};
 private [
 	"_nbparameters",
 	"_parameters",

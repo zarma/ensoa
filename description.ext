@@ -1,4 +1,6 @@
-﻿showCompass   = 1; 
+﻿#include "dlg\result.h"
+
+showCompass   = 1; 
 showGPS       = 1; 
 showMap       = 1; 
 showWatch     = 1; 

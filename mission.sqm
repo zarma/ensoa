@@ -115,7 +115,7 @@ class Mission
 	randomSeed=16036488;
 	class Intel
 	{
-		briefingName="=[A*C]= ENSOA CFIM Ft Bennings ((TRAINING)) v0.4";
+		briefingName="=[A*C]= ENSOA CFIM Ft Bennings ((TRAINING)) v0.51";
 		briefingDescription="Ecole instruction militaire fort bennings";
 		startWeather=0.037680566;
 		forecastWeather=0.015392959;
@@ -1496,7 +1496,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2244.6199,113.41965,5225.5415};
+					position[]={6395.9209,104.38622,2278.2932};
 					azimut=267.72037;
 					special="NONE";
 					id=527;
@@ -12690,7 +12690,7 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={6300.4038,103.023,2292.6355};
+			position[]={6297.4014,103.023,2292.6355};
 			name="Z_MrkTargets_RiflesClose";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -13148,6 +13148,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			expActiv="hint format[""Tenez vous prêt %1"", name (thislist select 0)] ;_null = [thislist select 0,10,5] execVM ""mission16a.sqf"";";
+			expDesactiv="_null = [thislist select 0] execVM ""mission16afin.sqf"";";
 			class Effects
 			{
 			};

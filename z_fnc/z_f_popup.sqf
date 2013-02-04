@@ -3,7 +3,7 @@
 // Created by: =[A*C]= Z
 // Pop up targets on region
 //////////////////////////////////////////////////////////////////
-
+if (!isServer) exitWith{};
 private [
 	"_args",
 	"_marker",
@@ -18,7 +18,7 @@ private [
 _indexparameters = 0;
 _args = _this select 3;
 _nbparameters = count _args;
-diag_log text format["|= z_fn_popup _this :  %1   ===|", _args];
+diag_log text format["|= z_f_popup _this :  %1   ===|", _args];
 if (_nbparameters < 2) exitWith { };
 {
 	if (_indexparameters <= _nbparameters) then {
@@ -32,7 +32,7 @@ if (isNil "_marker") exitWith { };
 if (isNil "_radius") exitWith { };
 
 _targets = nearestObjects [markerPos _marker, ["TargetBase"], _radius];
-diag_log text format["|= z_fn_popup _targets :  %1   ===|", _targets];
+diag_log text format["|= z_f_popup _targets :  %1   ===|", _targets];
 //--------------------------------------------------------------------------------------------------
 // PUP-UP THE TARGETS
 //--------------------------------------------------------------------------------------------------

@@ -4,6 +4,4 @@
 // gestion d es messages
 //////////////////////////////////////////////////////////////////
 
-z_smsg = {
-	[playerSide,"HQ"] sideChat _this;
-};
+[playerSide,"HQ"] sideChat _this;
